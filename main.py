@@ -30,23 +30,30 @@ print(password)
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
 
+# establish a list to add all randomly generated characters to
 password_list = []
 
+#generate random letters
 for char in range(1, nr_letters + 1):
   password_list.append(random.choice(letters))
 
+#generate random symbols
 for char in range(1, nr_symbols + 1):
   password_list += random.choice(symbols)
 
+#generate random numbers
 for char in range(1, nr_numbers + 1):
   password_list += random.choice(numbers)
 
+#print list of output, shuffle list, print new shuffled list
 print(password_list)
 random.shuffle(password_list)
 print(password_list)
 
+#generate password from the shuffled password list
 password = ""
 for char in password_list:
   password += char
 
+#display final, randomized password on screen
 print(f"Your password is: {password}")
